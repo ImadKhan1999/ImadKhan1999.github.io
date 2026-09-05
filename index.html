@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Telegram to Drive</title>
+<link rel="stylesheet" href="_style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Telegram to Drive</h1>
+    <p class="sub">A personal utility that saves files sent to a Telegram bot straight into the owner's Google Drive.</p>
+    <nav>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:hassanop3731@gmail.com">Contact</a>
+    </nav>
+  </header>
+
+  <h2>What it does</h2>
+  <p>
+    Telegram to Drive is a small self-hosted bot. You forward a file, video, photo or
+    document to it on Telegram, and it transfers that file into your own Google Drive
+    account and replies with a link to it.
+  </p>
+  <p>
+    It exists to move large media out of Telegram and into Drive without downloading
+    it to a computer first.
+  </p>
+
+  <h2>How it works</h2>
+  <ul>
+    <li>You send or forward a file to your own Telegram bot.</li>
+    <li>The bot reads the file from Telegram in small pieces held only in memory.</li>
+    <li>Each piece is passed directly to the Google Drive API as it arrives.</li>
+    <li>Nothing is written to the disk of the machine running the bot.</li>
+    <li>The bot replies with the Google Drive link for the finished upload.</li>
+  </ul>
+
+  <div class="card">
+    <h3>Single-user by design</h3>
+    <p class="sub" style="margin:0">
+      Each installation is operated by one person, uses that person's own Google account,
+      and is restricted to a list of approved Telegram user IDs. There is no shared
+      service, no public sign-up and no hosted version.
+    </p>
+  </div>
+
+  <h2>Google Drive access</h2>
+  <p>
+    The application requests a single Google OAuth scope,
+    <code>.../auth/drive.file</code>. That scope grants access only to files the
+    application itself creates. It cannot open, read, modify or delete anything else
+    in the connected Drive account.
+  </p>
+  <p>
+    Uploads are placed in a folder the application creates, named
+    <em>Telegram Uploads</em> by default.
+  </p>
+
+  <h2>Source and contact</h2>
+  <p>
+    This is a personal project maintained by its author. For questions about the
+    application or how it handles data, email
+    <a href="mailto:hassanop3731@gmail.com">hassanop3731@gmail.com</a>.
+  </p>
+
+  <footer>
+    <p>Telegram to Drive &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
+    <p>Not affiliated with Telegram or Google. Telegram and Google Drive are trademarks of their respective owners.</p>
+  </footer>
+</div>
+</body>
+</html>
